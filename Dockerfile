@@ -6,4 +6,5 @@ COPY . .
 RUN [ "npm", "run", "build" ]
 # Start nginx base image
 FROM nginx
+# Copy app folder from previous build
 COPY --from=builder /app/build /usr/share/nginx/html
